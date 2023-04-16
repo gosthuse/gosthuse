@@ -1,0 +1,28 @@
+{
+  "name": "teampage-map",
+  "version": "1.0.0",
+  "description": "Render a leaflet map for the team page",
+  "main": "index.js",
+  "author": "Lukas Eipert <leipert@gitlab.com>",
+  "license": "MIT",
+  "repository": "https://gitlab.com/gitlab-com/teampage-map",
+  "private": true,
+  "dependencies": {
+    "es6-promise": "^4.2.8",
+    "mapbox-gl": "^1.13.2",
+    "normalize.css": "^8.0.1"
+  },
+  "scripts": {
+    "lint": "pretty-quick"
+  },
+  "devDependencies": {
+    "axios": "^0.26.0",
+    "bluebird": "^3.7.2",
+    "lodash": "^4.17.21",
+    "prettier": "^2.5.1",
+    "pretty-quick": "^3.1.3",
+    "qs": "^6.10.3",
+    "us-state-codes": "^1.1.2",
+    "yaml-js": "^0.3.1"
+  }
+}

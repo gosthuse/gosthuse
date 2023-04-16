@@ -1,0 +1,38 @@
+include:
+  - project: gitlab-org/frontend/untamper-my-lockfile
+    file: .gitlab-ci-template.yml
+
+image: node:12-alpine
+
+workflow:
+  rules:
+    - if: $CI_MERGE_REQUEST_IID
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+
+default:
+  tags:
+    - gitlab-org
+
+.build_teampage:
+  stage: build
+  script:
+    - apk add --update --no-cache curl bash gzip
+    - bash ./build.sh
+    - ls public/
+  artifacts:
+    paths:
+      - public
+
+# For MRs
+build_teampage:
+  extends:
+    - .build_teampage
+  rules:
+    - if: '$CI_COMMIT_BRANCH != $CI_DEFAULT_BRANCH'
+
+# For pushing the live webpage
+pages:
+  extends:
+    - .build_teampage
+  rules:
+    - if: '$CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH'
