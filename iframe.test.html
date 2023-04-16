@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>GitLab: iframe test</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+      integrity="sha256-l85OmPOjvil/SOvVt3HnSSjzF1TUMyT9eV0c2BzEGzU="
+      crossorigin="anonymous"
+    />
+    <style>
+      header {
+        height: 30px;
+        background: aliceblue;
+        padding: 15px;
+      }
+
+      footer {
+        width: 100%;
+        background: antiquewhite;
+        height: 2500px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      Fake header
+    </header>
+    <iframe
+      frameborder="0"
+      height="500"
+      scrolling="no"
+      src="./src/index.html"
+      width="100%"
+    ></iframe>
+    <footer>
+      Long content
+    </footer>
+  </body>
+</html>
